@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Themii Codes</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;800&family=Material+Icons&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="main">
+    <h1>Themii Codes</h1>
+    <p>Download any video or audio from pasting your url :)</p>
+    <br>
+    
+    <div class="form">
+      <input type="txt" placeholder="Enter the link..." name="link" class="form-control link" required>
+      <br></div>
+      <div class="form">
+        <form class="form-download">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <select class="form-control formte" required>
+                  <option selected disabled>Select Video quality</option>
+                  <option value="mp3">Mp3</option>
+                  <option value="mp4a">144p</option>
+                  <option value="360">360p</option>
+                  <option value="480">480p</option>
+                  <option value="720">720p</option>
+                  <option value="1080">1080p</option>
+                  <option value="4k">4k</option>
+                  <option value="8k">8k</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card-body">
+          <center>
+          <div class="col-md-2">
+            <div class="form-group mt-4 download-video">
+              <button class="btn btn-success btn-block click-btn-down" type="submit">Download Now</button>
+            </div>
+          </div>
+        </center>
+  
+  <div class="footer">
+    <a class="github-button" href="#"
+      data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true"
+       data-size="large">Themiya</a>
+    <a href="http://www.themiicodes.tk" id="privacyBtn">Home</a>
+    <a href="https://www.buymeacoffee.com/themiya" target="_blank">Support</a>
+  </div>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <script src="script.js"></script>
+</body>
+<script type="text/javascript">
+  $(".click-btn-down").click(function(){
+      var link = $(".link").val();
+    var fromate = $(".formte").children("option:selected").val();
+    var src =""+link+"="+fromate+"";
+    downloadVideo(link,fromate);
+  });
+  function downloadVideo(link,fromate) {
+      $('.download-video').html('<iframe style="width:100%;height:60px;border:0;overflow:hidden;" scrolling="no" src="https://loader.to/api/button/?url='+link+'&f='+fromate+'"></iframe>');
+  }
+</script>
+
+</html>
